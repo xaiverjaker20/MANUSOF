@@ -1,0 +1,102 @@
+body{
+    font-family: 'Anton', sans-serif; /* tipo de letra */ 
+    margin: 0; /* margenes de la pagina */
+}
+header {
+display: flex; /* organiza la visualizacion */
+min-height: 30px;; 
+justify-content:space-between; /* coloca el contenido en los extremos */
+align-items: center; /* Alinea al centro */
+padding: 10px; /* maneja espacio dentro del cuadro */
+background-color: rgb(187, 18, 26)
+
+}
+.logo {
+    display: flex; /* organiza la visualizacion */
+    align-items: center; /* Alinea al centro */
+}
+.logo-img{
+height: 50px; /* ancho del logo */
+margin-right: 300px; /* margene derecha del logo */
+}
+.logo-menu{
+    height: 50px; /* ancho de la img del menu */
+
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+
+@media (max-width: 700px){
+    header{
+        flex-direction: column;
+    }
+}
+
+.contenedor{
+    display: flex;
+    justify-content:space-between; /* coloca el contenido en los extremos */
+    align-items: center; /* Alinea al centro */
+    padding: 10px; /* maneja espacio dentro del cuadro */
+}
+.menu{
+
+    display: flex;
+
+}
+
+.menu-link {
+    display: inline-block;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: 'Anton', sans-serif;
+}
+
+.menu-link:hover {
+    color: gray;
+}
+
+.logo1 {
+
+    height: 70px; /* ancho de la img del menu */
+   
+}
+.footer {
+    content: "";
+    position: absolute;
+    left: 50;
+    top: 50;
+    height: 10%;
+    width: 100%;
+    background-color: rgba(187, 18, 26);
+    z-index: -1;
+}
