@@ -21,10 +21,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: ../menu.html");
             exit();
         } else {
-            echo "Usuario o contraseña incorrectos";
+            header("Location: ../CONTRASEÑA.html?error=1");
+            exit();
         }
     } else {
-        echo "Usuario o contraseña incorrectos";
+        header("Location: ../CONTRASEÑA.html?error=1");
+        exit();
     }
 
     $stmt->close();

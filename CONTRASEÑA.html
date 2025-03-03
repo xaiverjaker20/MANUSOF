@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
+<div id="error-container" class="error-message" style="display: none;">Usuario o contraseña incorrectos</div>
 <div class="login-container">
     <h1>MANUSOFT</h1>
     <form id="loginForm" action="php/login.php" method="POST">
@@ -18,5 +19,12 @@
     <button onclick="window.location.href='register.html'">Registrarse</button>
 </div>
 <script src="js/login.js"></script>
+<script>
+    // Verificar si hay un parámetro de error en la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('error')) {
+        document.getElementById('error-container').style.display = 'block';
+    }
+</script>
 </body>
 </html>

@@ -100,3 +100,8 @@ margin-right: 300px; /* margene derecha del logo */
     background-color: rgba(187, 18, 26);
     z-index: -1;
 }
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
