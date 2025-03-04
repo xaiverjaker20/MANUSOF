@@ -21,11 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             header("Location: ../menu.html");
             exit();
         } else {
-            header("Location: ../CONTRASEÑA.html?error=1");
+            header("Location: ../register.html?error=1");
             exit();
         }
     } else {
-        header("Location: ../CONTRASEÑA.html?error=1");
+        header("Location: ../register.html?error=1");
         exit();
     }
 
