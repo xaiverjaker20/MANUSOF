@@ -3,27 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INICIO DE SESIÓN</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 </head>
 <body>
-<div id="error-container" class="error-message" style="display: none;">Usuario o contraseña incorrectos</div>
 <div class="login-container">
-    <h1>MANUSOFT</h1>
-    <form id="loginForm" action="php/login.php" method="POST">
-        <input type="text" id="username" name="username" placeholder="Usuario" required>
-        <input type="password" id="password" name="password" placeholder="Contraseña" required>
-        <input type="submit" value="Ingresar">
+    <h2>Registro</h2>
+    <form action="php/register.php" method="post">
+        <input type="text" name="username" placeholder="Usuario" required>
+        <input type="password" name="password" placeholder="Contraseña" required>
+        <input type="submit" value="Registrar">
     </form>
-    <button onclick="window.location.href='register.html'">Registrarse</button>
+    <div class="error-message" id="error-message" style="display: none;"></div>
 </div>
-<script src="js/login.js"></script>
 <script>
     // Verificar si hay un parámetro de error en la URL
     const urlParams = new URLSearchParams(window.location.search);
+    const errorMessage = document.getElementById('error-message');
     if (urlParams.has('error')) {
-        document.getElementById('error-container').style.display = 'block';
+        const error = urlParams.get('error');
+        if (error === '1') {
+            errorMessage.innerText = 'El usuario ya existe';
+        } else if (error === '2') {
+            errorMessage.innerText = 'Error al registrar el usuario';
+        }
+        errorMessage.style.display = 'block';
     }
 </script>
 </body>
